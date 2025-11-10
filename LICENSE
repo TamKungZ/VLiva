@@ -1,15 +1,15 @@
-# License
+Copyright (c) 2025 TamKungZ_
 
-Copyright (c) 2025 TamKungZ_  
-All Rights Reserved.  
-Contact: **kittiwut.pimpromma@gmail.com**
+All Rights Reserved.
 
-## Notice
+This software is the proprietary property of the authors.
 
-The source code in this repository is **boilerplate code** intended solely for demonstrating project setup.
+You may not use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software without express written permission from the copyright holder.
 
-The complete source code of the **VLiva** project is **proprietary** and will **not** be released under any Open Source license.
+The source code contained in this public repository is provided "as-is" for
+demonstration or boilerplate purposes only. It does not represent the final,
+complete, or functional software. The complete source code is private and
+will not be published.
 
-## Dependencies
-
-This project depends on **Live2D Cubism SDK**, which is governed by the licensing terms of **Live2D Inc.**
+This project depends on Live2D Cubism SDK, which is governed by the licensing terms of Live2D Inc.
