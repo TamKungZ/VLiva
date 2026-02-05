@@ -12,6 +12,10 @@
 The project was born out of the challenge of using Vtuber applications on **Linux**, which are often difficult to run and unstable.  
 **VLiva** aims to solve this by providing a **100% Linux-native** solution for Vtubers.
 
+### Screenshot 
+
+![Screenshot](https://tamkungz.github.io/image/Screenshot-from-2025-11-12%2019-35-45.png)
+
 ----------
 
 ### Important Notice: About This Repository
