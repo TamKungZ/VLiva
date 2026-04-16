@@ -14,7 +14,7 @@ The project was born out of the challenge of using Vtuber applications on **Linu
 
 ### Screenshot 
 
-![Screenshot](https://tamkungz.github.io/image/Screenshot-from-2025-11-12%2019-35-45.png)
+![Screenshot](https://vliva.tamkungz.me/assets/screenshot.png)
 
 ----------
 
