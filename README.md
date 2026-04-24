@@ -33,13 +33,13 @@ This repository serves as the **main public information hub**, allowing users to
 
 -   **Programmer:** **TamKungZ_**
     
-    -   **GitHub:** [tamkungz.github.io](https://tamkungz.github.io/)
+    -   **Page:** [dev.tamkungz.me](https://dev.tamkungz.me/)
         
-    -   **Email:** kittiwut.pimpromma@gmail.com
+    -   **Email:** <dev@tamkungz.me> || <kittiwut.pimpromma@gmail.com>
         
 -   **Live2D Artist:** **zc.**
     
-    -   **X (Twitter):** [@Izc_it](https://x.com/Izc_it)
+    -   **X (Twitter):** [@zcdot_](https://x.com/zcdot_)
         
 
 ----------
