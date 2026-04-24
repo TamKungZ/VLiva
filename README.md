@@ -1,7 +1,7 @@
 
 ## VTube for Linux
 
-**Status:** 🟠 _Work in Progress (Soon / Developing)_
+**Status:** 🟠 _Work in Progress (Soon / Developing) || Requesting Live2D License_
 
 ----------
 
