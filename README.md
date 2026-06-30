@@ -62,13 +62,13 @@ https://vliva.tamkungz.me/
 
 Qt/QML UI preview with MediaPipe tracking:
 
-![VLiva Qt/QML UI Preview](https://vliva.tamkungz.me/assets/v2/screenshot/app_v1-0-0_preview_mediapipe_tracking.webp)
+![VLiva Qt/QML UI Preview](https://pub-df28fb9f69aa4326a1c6e10fb1f2abdc.r2.dev/assets-image/vliva/vliva-preview-image-2.png)
 
 ### Legacy Preview
 
 Older early-development Dear ImGui preview:
 
-![VLiva Legacy Preview](https://vliva.tamkungz.me/assets/screenshot.png)
+![VLiva Legacy Preview](https://vliva.tamkungz.me/assets/v1/screenshot.png)
 
 ---
 
