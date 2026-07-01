@@ -21,3 +21,15 @@ target_link_libraries(vliva
     pthread
     dl
 )
+
+add_library(vliva_example_plugin MODULE
+    plugins/example_plugin.cpp
+)
+set_target_properties(vliva_example_plugin PROPERTIES
+    PREFIX ""
+    OUTPUT_NAME "example_plugin"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/plugins"
+)
+target_include_directories(vliva_example_plugin PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+)

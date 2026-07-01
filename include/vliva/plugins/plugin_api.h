@@ -6,7 +6,7 @@
 extern "C" {
 #endif
 
-#define VLIVA_PLUGIN_API_VERSION 1u
+#define VLIVA_PLUGIN_API_VERSION 2u
 #define VLIVA_TRACKING_FRAME_VERSION 1u
 #define VLIVA_TRACKING_MODEL_NAME_CAPACITY 128u
 #define VLIVA_TRACKING_MODE_NAME_CAPACITY 64u
@@ -50,15 +50,29 @@ typedef struct VlivaHostApi {
 
     // Send a UDP payload using host UDP sender. Returns 1 on success.
     int (*udp_send)(const char* payload);
+
+    // Directory for per-plugin config files. Steam builds resolve this to
+    // bin/config next to the executable; development builds use build/dev/config.
+    const char* (*plugin_config_dir)(void);
+
+    // Read/write a key from bin/config/<plugin_id>.toml. Values are stored as
+    // strings so plugins can decide how to parse them.
+    int (*plugin_config_read)(const char* plugin_id, const char* key, char* out_value, uint32_t out_value_capacity);
+    int (*plugin_config_write)(const char* plugin_id, const char* key, const char* value);
 } VlivaHostApi;
 
 // Plugin surface expected by host (C ABI).
 typedef struct VlivaPluginApi {
     uint32_t api_version;
+    const char* (*id)(void);
     const char* (*name)(void);
+    const char* (*description)(void);
     void (*on_load)(const VlivaHostApi* host);
     void (*on_unload)(void);
     void (*on_frame)(double time_seconds, float delta_seconds);
+    const char* (*settings_schema_json)(void);
+    void (*on_setting_changed)(const char* key, const char* value);
+    void (*on_action)(const char* action_id);
 } VlivaPluginApi;
 
 // Required exported symbol from plugin shared object.

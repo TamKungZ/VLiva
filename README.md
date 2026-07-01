@@ -109,6 +109,42 @@ Please do not include private Live2D models, paid model files, personal data, ac
 
 ---
 
+## Plugin Development Preview
+
+VLiva plugins are native Linux shared libraries loaded from `bin/plugins`, user plugin folders, or paths listed in
+`VLIVA_PLUGIN_DIRS`. Plugins use the stable C header at `include/vliva/plugins/plugin_api.h`.
+
+Build the example plugin:
+
+```bash
+cmake -S . -B build
+cmake --build build --target vliva_example_plugin --parallel
+```
+
+For local testing with the closed VLiva build:
+
+```bash
+VLIVA_PLUGIN_DIRS="$PWD/build/plugins" /path/to/vliva/bin/vliva.sh
+```
+
+Plugin settings are declared by returning JSON from `settings_schema_json()`. VLiva renders the controls in
+App settings -> Plugins and saves values to `bin/config/<pluginID>.toml`.
+
+Supported controls:
+
+- `text`: read-only plain text. Fields: `label`, `text`, `description`.
+- `image`: read-only image. Fields: `source`.
+- `textbox`: editable text. Fields: `key`, `label`, `placeholder`, `default`, `description`.
+- `checkbox`: boolean switch. Fields: `key`, `label`, `default`.
+- `slider`: numeric slider. Fields: `key`, `label`, `min`, `max`, `step`, `default`, `description`.
+- `button`: action button. Fields: `action`, `label`, `primary`.
+
+The host calls `on_setting_changed(key, value)` when the user changes a setting and `on_action(action_id)` when the
+user presses a plugin button. Plugins can also read and write their own config through
+`host->plugin_config_read()` and `host->plugin_config_write()`.
+
+---
+
 ## Live2D Cubism SDK Notice
 
 VLiva uses **Live2D Cubism SDK**.
