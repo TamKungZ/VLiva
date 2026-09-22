@@ -11,9 +11,9 @@
 <p align="center">
   <a href="https://vliva.tamkungz.me/">Website</a>
   ·
-    <a href="https://x.com/VLivaSoftware">X</a>
+  <a href="https://x.com/VLivaSoftware">X</a>
   ·
-    <a href="https://www.reddit.com/r/VLiva/">Reddit</a>
+  <a href="https://www.reddit.com/r/VLiva/">Reddit</a>
   ·
   <a href="https://github.com/TamKungZ/VLiva/issues">Issues</a>
 </p>
@@ -34,19 +34,21 @@ Public testing is not available yet because the project is still preparing the r
 
 **VLiva** is a VTubing application for Linux that can load and run VTuber models created with **Live2D**.
 
-The project was created from the problem of using VTubing software on Linux.  
-Many VTubing tools are mainly built for Windows, and running them on Linux through compatibility layers can be unstable, limited, or inconvenient.
+The project was created to address the limited availability of native VTubing software on Linux.
 
-VLiva aims to provide a Linux-native VTubing workflow, including:
+Many VTubing tools are primarily built for Windows, while running them on Linux through compatibility layers can introduce instability, limitations, or additional setup.
 
-- Live2D model loading
-- Webcam-based face tracking
-- Real-time avatar control
-- OBS / streaming workflow support
-- Native Linux desktop UI
+VLiva aims to provide a native Linux VTubing workflow, including:
 
-VLiva is not intended to be a clone of VTube Studio.  
-It is its own VTubing application built for Linux users.
+* Live2D model loading
+* Webcam-based face tracking
+* Real-time avatar control
+* OBS / streaming workflow support
+* Native Linux desktop UI
+
+VLiva is not intended to be a clone of VTube Studio.
+
+It is an independent VTubing application designed specifically for Linux users.
 
 ---
 
@@ -72,76 +74,47 @@ Older early-development Dear ImGui preview:
 
 ---
 
-## Important Notice About This Repository
+## About This Repository
 
-This repository is **not** the main source-code repository of VLiva.
+This repository serves as the public GitHub hub for **VLiva**.
 
-The full, current, and active VLiva source code is **proprietary**, **closed source**, and **not planned to be released publicly**.
+It is primarily intended for:
 
-Any source code that may exist in this repository is old, incomplete, experimental, or boilerplate from the early development stage. It should not be treated as the current application code.
+* Project information
+* Development updates
+* Issue reports
+* Bug reports
+* Feature requests
+* User feedback
+* Documentation links
+* Release announcements
 
-This repository exists mainly as a public hub for:
+The current VLiva application is **proprietary software** and its source code is not publicly available.
 
-- Project information
-- Development updates
-- Issue reports
-- Bug reports
-- Feature requests
-- Documentation links
-- Release notices when available
+This repository should not be treated as the source-code repository for VLiva.
+
+For official information and updates, please use the links provided above.
 
 ---
 
 ## Reporting Issues
 
-You can use the GitHub Issues page to report problems, request features, or give feedback.
+Problems, bugs, feature requests, and general feedback can be submitted through the GitHub Issues page:
 
-When reporting a bug, please include:
+https://github.com/TamKungZ/VLiva/issues
 
-- Linux distribution and version
-- Desktop environment or window manager
-- GPU and driver information
-- VLiva version or preview build, if available
-- Steps to reproduce the issue
-- Screenshots or logs, if useful
+When reporting a bug, please include relevant information when possible:
 
-Please do not include private Live2D models, paid model files, personal data, access tokens, or sensitive system information in public issues.
+* Linux distribution and version
+* Desktop environment or window manager
+* GPU and driver information
+* VLiva version or preview build
+* Steps to reproduce the issue
+* Expected behavior
+* Actual behavior
+* Screenshots or logs, if useful
 
----
-
-## Plugin Development Preview
-
-VLiva plugins are native Linux shared libraries loaded from `bin/plugins`, user plugin folders, or paths listed in
-`VLIVA_PLUGIN_DIRS`. Plugins use the stable C header at `include/vliva/plugins/plugin_api.h`.
-
-Build the example plugin:
-
-```bash
-cmake -S . -B build
-cmake --build build --target vliva_example_plugin --parallel
-```
-
-For local testing with the closed VLiva build:
-
-```bash
-VLIVA_PLUGIN_DIRS="$PWD/build/plugins" /path/to/vliva/bin/vliva.sh
-```
-
-Plugin settings are declared by returning JSON from `settings_schema_json()`. VLiva renders the controls in
-App settings -> Plugins and saves values to `bin/config/<pluginID>.toml`.
-
-Supported controls:
-
-- `text`: read-only plain text. Fields: `label`, `text`, `description`.
-- `image`: read-only image. Fields: `source`.
-- `textbox`: editable text. Fields: `key`, `label`, `placeholder`, `default`, `description`.
-- `checkbox`: boolean switch. Fields: `key`, `label`, `default`.
-- `slider`: numeric slider. Fields: `key`, `label`, `min`, `max`, `step`, `default`, `description`.
-- `button`: action button. Fields: `action`, `label`, `primary`.
-
-The host calls `on_setting_changed(key, value)` when the user changes a setting and `on_action(action_id)` when the
-user presses a plugin button. Plugins can also read and write their own config through
-`host->plugin_config_read()` and `host->plugin_config_write()`.
+Please do not include private Live2D models, paid model files, personal information, access tokens, authentication credentials, or other sensitive information in public issues.
 
 ---
 
@@ -155,25 +128,26 @@ VLiva is not affiliated with, endorsed by, or sponsored by Live2D Inc.
 
 The project is currently preparing the required Live2D Cubism SDK licensing / review process before public release or testing.
 
-Users are responsible for making sure their own use of Live2D models, assets, characters, and related content follows the license terms of the model creator, asset seller, and Live2D Inc.
+Users are responsible for ensuring that their use of Live2D models, assets, characters, and related content complies with the applicable license terms of the model creator, asset seller, and Live2D Inc.
 
 ---
 
 ## Model Credits
 
-The preview and testing materials may use models or assets from the following creators.
+Preview and testing materials may use models or assets from the following creators.
 
 ### MedL2D
 
-- X: https://x.com/MedL2D
-- BOOTH: https://booth.pm/en/items/4711410
+* X: https://x.com/MedL2D
+* BOOTH: https://booth.pm/en/items/4711410
 
 ### TsukinoHana
 
-- X: https://x.com/hana_nokamisama
-- BOOTH: https://booth.pm/en/items/5396597
+* X: https://x.com/hana_nokamisama
+* BOOTH: https://booth.pm/en/items/5396597
 
-These credits are for testing / preview assets only.  
+These credits apply only to models or assets used for testing and preview purposes.
+
 Ownership and rights remain with their respective creators.
 
 ---
@@ -184,25 +158,25 @@ Ownership and rights remain with their respective creators.
 
 **TamKungZ_**
 
-- Website: https://dev.tamkungz.me/
-- Email: dev@tamkungz.me
-- Email: kittiwut.pimpromma@gmail.com
+* Website: https://dev.tamkungz.me/
+* Email: [dev@tamkungz.me](mailto:dev@tamkungz.me)
+* Email: [kittiwut.pimpromma@gmail.com](mailto:kittiwut.pimpromma@gmail.com)
 
 ### Live2D / Art
 
 **zc.**
 
-- X: https://x.com/zcdot_
+* X: https://x.com/zcdot_
 
 ---
 
 ## License
 
-Copyright (c) 2025 TamKungZ_  
+Copyright (c) 2025 TamKungZ_
 All Rights Reserved.
 
 VLiva is proprietary software.
 
-The source code of the current VLiva application is not open source.
+The source code of the current VLiva application is not open source and is not publicly distributed.
 
-See the [LICENSE](./LICENSE) file for more details.
+See the [LICENSE](./LICENSE) file for more information.
