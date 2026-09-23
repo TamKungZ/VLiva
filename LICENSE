@@ -13,3 +13,7 @@ complete, or functional software. The complete source code is private and
 will not be published.
 
 This project depends on Live2D Cubism SDK, which is governed by the licensing terms of Live2D Inc.
+
+Exception: files contained in `plugins/obs` are licensed separately under the
+GNU General Public License version 2 or any later version, as stated in
+`plugins/obs/LICENSE`. This proprietary license does not apply to those files.

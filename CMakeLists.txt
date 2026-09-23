@@ -33,3 +33,8 @@ set_target_properties(vliva_example_plugin PROPERTIES
 target_include_directories(vliva_example_plugin PRIVATE
     ${CMAKE_SOURCE_DIR}/include
 )
+
+option(VLIVA_BUILD_OBS_PLUGIN "Build the standalone GPL OBS source plugin" ON)
+if(VLIVA_BUILD_OBS_PLUGIN)
+    add_subdirectory(plugins/obs)
+endif()

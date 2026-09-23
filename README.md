@@ -95,6 +95,13 @@ This repository should not be treated as the source-code repository for VLiva.
 
 For official information and updates, please use the links provided above.
 
+### Open-source OBS plugin
+
+The complete VLiva OBS source plugin is published under GPL-2.0-or-later in
+[`plugins/obs`](plugins/obs). It is standalone, links only with OBS/libobs, and
+communicates with the closed VLiva application through a versioned shared-memory
+protocol. See its directory README for build and installation instructions.
+
 ---
 
 ## Reporting Issues
@@ -180,3 +187,6 @@ VLiva is proprietary software.
 The source code of the current VLiva application is not open source and is not publicly distributed.
 
 See the [LICENSE](./LICENSE) file for more information.
+
+The standalone OBS source under `plugins/obs` is an explicit exception and is
+licensed under GPL-2.0-or-later.
