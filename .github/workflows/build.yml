@@ -14,7 +14,7 @@ jobs:
       - name: Install build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install --yes build-essential cmake qt6-base-dev
+          sudo apt-get install --yes build-essential cmake libgl1-mesa-dev qt6-base-dev
 
       - name: Configure
         run: >-

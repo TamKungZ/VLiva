@@ -95,28 +95,6 @@ This repository should not be treated as the source-code repository for VLiva.
 
 For official information and updates, please use the links provided above.
 
-### Buildable public notice
-
-The root CMake project builds a small Qt 6 informational window. It exists so
-the public repository has a valid, testable build target while making the
-repository boundary unambiguous. It is not a reduced build of the proprietary
-VLiva application and contains none of that application's private source.
-
-On Ubuntu 22.04 or a compatible distribution:
-
-```bash
-sudo apt install build-essential cmake qt6-base-dev
-cmake -S . -B build -DVLIVA_BUILD_OBS_PLUGIN=OFF
-cmake --build build --parallel
-./build/vliva
-```
-
-Automated environments can validate window creation without leaving it open:
-
-```bash
-QT_QPA_PLATFORM=offscreen ./build/vliva --smoke-test
-```
-
 ### Open-source OBS plugin
 
 The complete VLiva OBS source plugin is published under GPL-2.0-or-later in
