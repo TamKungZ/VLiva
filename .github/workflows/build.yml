@@ -1,0 +1,31 @@
+name: Build public targets
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  linux:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes build-essential cmake qt6-base-dev
+
+      - name: Configure
+        run: >-
+          cmake -S . -B build
+          -DCMAKE_BUILD_TYPE=Release
+          -DVLIVA_BUILD_OBS_PLUGIN=OFF
+
+      - name: Build
+        run: cmake --build build --parallel 2
+
+      - name: Smoke-test notice window
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: ./build/vliva --smoke-test

@@ -1,26 +1,14 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
 project(VLiva LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Cubism SDK
+find_package(Qt6 6.2 REQUIRED COMPONENTS Widgets)
 
-file(GLOB VLIVA_SRC src/*.cpp)
-add_executable(vliva ${VLIVA_SRC})
-
-target_include_directories(vliva PUBLIC
-    ${CMAKE_SOURCE_DIR}/include
-    /usr/include  
-)
-
-target_link_libraries(vliva
-    GL
-    GLEW
-    glfw
-    pthread
-    dl
-)
+add_executable(vliva src/main.cpp)
+target_link_libraries(vliva PRIVATE Qt6::Widgets)
 
 add_library(vliva_example_plugin MODULE
     plugins/example_plugin.cpp
@@ -38,3 +26,8 @@ option(VLIVA_BUILD_OBS_PLUGIN "Build the standalone GPL OBS source plugin" ON)
 if(VLIVA_BUILD_OBS_PLUGIN)
     add_subdirectory(plugins/obs)
 endif()
+
+include(GNUInstallDirs)
+install(TARGETS vliva RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(FILES README.md LICENSE
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/vliva-public-notice)
